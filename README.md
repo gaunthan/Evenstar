@@ -13,7 +13,7 @@ Evenstar is a responsive, dark and simple blog theme for [Leanote](https://leano
 - Tag cloud support, automatically adjust tag appearance by posts it has.
 - Automaticly fold/expand TOC navigator. 
 - Solarized dark theme for code print.
-- Reward support. Remember replacing images/wechat-pay.png and images/alipay.png with your own QR-code. 
+- Reward support. Remember replacing source/images/qr-wechat.png and source/images/qr-alipay.png with your own QR-code. 
 - Dark, simple 404 page. 
 - ...
 
@@ -29,6 +29,19 @@ Evenstar is a responsive, dark and simple blog theme for [Leanote](https://leano
 
 ### Mobile view
 ![](images/screenshot-view-on-phone.png)
+
+## How to use
+Firstly, you need to download this repo
+    
+    cd ~/Downloads
+    git clone https://github.com/gaunthan/Evenstar
+    cd Evenstar
+
+For uploading Evenstar to your Leanote, you need to zip the ./source path to a file
+
+    zip Evenstar.zip source/*
+    
+Then you can upload it on your [blog settings center](https://leanote.com/member/blog/theme).
 
 ## License
 MIT.
