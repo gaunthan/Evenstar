@@ -1,0 +1,65 @@
+/* Google Code Prettify */
+pre.prettyprint  * {
+    font-family: monospace,Consolas,Monaco,Menlo,"Courier New";
+    font-size: 12px;
+    background-color: transparent;
+}
+
+pre.prettyprint {
+/*     注释下面这句使单词不自动换行  */
+/*     white-space: pre-wrap;   */
+    word-wrap: break-word;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+}
+
+.prettyprint {
+  color: #839496;
+  background-color: #002b36;
+}
+
+.prettyprint .pln {
+  color: inherit;
+}
+
+.prettyprint .str,
+.prettyprint .lit,
+.prettyprint .atv {
+  color: #2aa198;
+}
+
+.prettyprint .kwd {
+  color: #268bd2;
+}
+
+.prettyprint .com,
+.prettyprint .dec {
+  color: #55AA00;
+  font-style: none;
+}
+
+.prettyprint .typ {
+  color: #b58900;
+}
+
+.prettyprint .pun {
+  color: inherit;
+}
+
+.prettyprint .opn {
+  color: inherit;
+}
+
+.prettyprint .clo {
+  color: inherit;
+}
+
+.prettyprint .tag {
+  color: #268bd2;
+  font-weight: bold;
+}
+
+.prettyprint .atn {
+  color: inherit;
+}

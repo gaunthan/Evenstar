@@ -1,0 +1,9 @@
+{{template "head.html" $}}
+<body>
+    {{if $.curIsPost}}
+        {{template "actions_desktop.html" $}}
+    {{end}}
+    <div class="content index width mx-auto px2 my4">
+        {{if not $.curIsPost}}
+            {{template "header.html" $}}
+        {{end}}

@@ -1,0 +1,13 @@
+{{if $.curIsPost}}
+<ul>
+  <li><a class="icon" title="facebook" href="http://www.facebook.com/sharer.php?u={{$.postUrl}}/{{$.post.NoteId}}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+  <li><a class="icon" title="twitter" href="https://twitter.com/share?url={{$.postUrl}}/{{$.post.NoteId}}&text={{$.post.Title}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+  <li><a class="icon" title="linkedin" href="http://www.linkedin.com/shareArticle?url={{$.postUrl}}/{{$.post.NoteId}}&title={{$.post.Title}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+  <li><a class="icon" title="pinterest" href="https://pinterest.com/pin/create/bookmarklet/?url={{$.postUrl}}/{{$.post.NoteId}}&is_video=false&description={{$.post.Title}}"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+  <li><a class="icon" title="mailto" href="mailto:?subject={{$.post.Title}}&body=Check out this article: {{$.postUrl}}/{{$.post.NoteId}}"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+  <li><a class="icon" title="reddit" href="http://reddit.com/submit?url={{$.postUrl}}/{{$.post.NoteId}}&title={{$.post.Title}}"><i class="fa fa-reddit" aria-hidden="true"></i></a></li>
+  <li><a class="icon" title="stumbleupon" href="http://www.stumbleupon.com/submit?url={{$.postUrl}}/{{$.post.NoteId}}&title={{$.post.Title}}"><i class="fa fa-stumbleupon" aria-hidden="true"></i></a></li>
+  <li><a class="icon" title="digg" href="http://digg.com/submit?url={{$.postUrl}}/{{$.post.NoteId}}&title={{$.post.Title}}"><i class="fa fa-digg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" title="tumblr" href="http://www.tumblr.com/share/link?url={{$.postUrl}}/{{$.post.NoteId}}&name={{$.post.Title}}&description={{$.post.Desc}}"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
+</ul>
+{{end}}

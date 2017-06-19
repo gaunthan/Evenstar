@@ -1,0 +1,16 @@
+{{template "footer_js.html"  $}}
+
+<footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; {{$.blogInfo.Username}} || {{$.blogInfo.Title}}
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        {{template "nav.html" $}}
+        <!--Blog settings-->
+        <li><a href="https://leanote.com/member/blog/theme" title="Settings"><i class="fa fa-cog" aria-hidden="true"></i></a></li>        
+      </ul>
+    </nav>
+  </div>
+</footer>

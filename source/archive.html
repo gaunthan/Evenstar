@@ -1,0 +1,23 @@
+{{template "partial_header.html" .}}
+
+<div id="archive">
+    <ul class="post-list">
+    {{range $.archives}}
+    {{$year := .Year}}
+        {{range .MonthAchives}}
+            <h2>{{$year}}-{{.Month}}</h2>
+
+            {{range .Posts}}
+                <li class="post-item">
+                    <div class="meta">
+                    <time datetime="{{ .PublicTime}}" itemprop="datePublish">{{dateFormat .PublicTime "2006-01-02"}}</time>
+                    </div>
+                    <span><a class="title" href="{{$.postUrl}}/{{.UrlTitle}}" itemprop="url">{{.Title}}</a></span> 
+                </li>
+            {{end}}
+        {{end}}
+    {{end}}    
+    </ul>
+</div>
+
+{{template "partial_footer.html" .}}

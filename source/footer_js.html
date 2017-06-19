@@ -1,0 +1,57 @@
+<script src="{{$.jQueryUrl}}"></script>
+<!--<script src="{{$.bootstrapJsUrl}}"></script>-->
+<!--<script src="{{$.siteUrl}}/js/bootstrap-hover-dropdown.js"></script>-->
+<script src="{{$.themeBaseUrl}}/main.js"></script>
+<script>
+    // 搜索
+    function search(e) {
+    	var keywords = $("#searchInput").val();
+    	if(!keywords) {
+    		location.href = "{{$.searchUrl}}";
+    	} else {
+    		var tpl = '<form style="display: none" action="{{$.searchUrl}}" method="get">';
+    		tpl += '<input name="keywords" value="' + keywords + '" />';
+    		tpl += "</form";
+    		var $tpl = $(tpl);
+    		$('body').append($tpl)
+    		$tpl.submit();
+    		$tpl.remove(); 
+    	}
+    }
+</script>
+
+<!--Clone toc-->
+<script>
+    $('#toc-footer').append($('#toc').clone(true));
+</script>
+
+<script src="{{$.themeBaseUrl}}/scrollspy.js"></script>
+<script type="text/javascript">
+// The following code is come from hexo theme NexT.
+$(document).ready(function () {
+
+  initScrollSpy();
+
+  function initScrollSpy () {
+    var tocSelector = '#toc';
+    var $tocElement = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocElement
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+      })
+      .on('clear.bs.scrollspy', removeCurrentActiveClass);
+
+    $('body').scrollspy({ target: tocSelector });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+  }
+});
+</script>

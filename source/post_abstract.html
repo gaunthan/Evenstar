@@ -1,0 +1,24 @@
+{{range $.posts}}
+	<div class="each-post">
+		<div class="title">
+			<a class="h1" style="display: inline" href="{{$.postUrl}}/{{.UrlTitle}}" title="Full text">{{.Title}}</a>
+            <!--<time datetime="{{ .PublicTime}}" itemprop="datePublish">{{dateFormat .PublicTime "2006-01-02"}}</time>-->
+            {{if .Tags}}
+                <div class="article-tag">
+                    <i class="fa fa-tag"></i>
+                    {{blogTags $ .Tags}}
+                </div>	
+            {{end}}                
+		</div>
+		
+		<div class="desc content">
+			{{.Abstract | raw}}
+		</div>
+		<div id="moreContainer">
+		    <a class="more" href="{{$.postUrl}}/{{.UrlTitle}}" title="Read"></a></div>
+	</div>
+{{else}}
+    <div class="each-post">
+    No more result.
+    </div>
+{{end}}

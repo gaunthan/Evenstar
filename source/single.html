@@ -1,0 +1,9 @@
+{{template "partial_header.html" .}}
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="content" itemprop="articleBody">
+    {{$.single.Content | raw}}
+  </div>
+</article>
+
+{{template "partial_footer.html" .}}

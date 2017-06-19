@@ -1,0 +1,10 @@
+{{template "partial_header.html" .}}
+
+<div id="postsContainer">
+	<div id="posts">
+		{{template "post_abstract.html" $}}
+		{{template "paging.html" $}}
+	</div>
+</div>
+
+{{template "partial_footer.html" .}}

@@ -1,0 +1,22 @@
+<header id="header">
+    <a href="{{$.indexUrl}}">
+        <div id="logo" style="background-image: url({{$.blogInfo.UserLogo}});"></div>
+        <div id="title">
+            <h1><a href="{{$.indexUrl}}">{{$.blogInfo.Title}}</a></h1>
+            <span>{{$.blogInfo.SubTitle}}</span>
+        </div>
+    </a>
+    
+    <div id="nav">
+        <ul>
+            <li class="icon"><a href="#"><i class="fa fa-bars fa-2x"></i></a></li>
+            
+            {{template "nav.html" $}}
+            
+            <li><form class="searchForm collapsed" id="search" onsubmit="search(event);return false;" style="display: inline-block;">              
+                <input class="searchTerm" placeholder="Search…" autocomplete="off" type="text" id="searchInput">
+                <input type="submit" class="searchBtn" value="GO">
+            </form></li>
+        </ul>
+    </div>
+</header>

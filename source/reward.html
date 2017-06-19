@@ -1,0 +1,27 @@
+<!--Buy me a coffee-->
+{{if (eq $.themeInfo.CanGiveMoney "true")}}
+<div>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    {{if (eq $.themeInfo.WantMoneyNotice "true")}}
+    <div style="margin-bottom: 5px">{{$.themeInfo.MoneyNotice}}</div>
+    {{end}}
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      {{if (eq $.themeInfo.UseCustomRewardImage "true")}}
+      <img src="{{$.themeBaseUrl}}/images/{{$.themeInfo.RewardImageName}}" alt="Reward Image" />
+      {{else}}
+      <span>{{$.themeInfo.RewardButtonText}}</span>
+      {{end}}
+    </button>
+    <div id="QR" style="display: none;">
+        <div id="wechat" style="display: inline-block">
+          <a href="{{$.themeBaseUrl}}/images/qr-wechat.png" class="fancybox" rel="group"><img id="wechat_qr" src="{{$.themeBaseUrl}}/images/qr-wechat.png" alt="WeChat Pay"></a>
+          <span><br>Wechat Pay</span>
+        </div>
+        <div id="alipay" style="display: inline-block">
+          <a href="{{$.themeBaseUrl}}/images/qr-alipay.png" class="fancybox" rel="group"><img id="alipay_qr" src="{{$.themeBaseUrl}}/images/qr-alipay.png" alt="Alipay"></a>
+          <span><br>Alipay</span>
+        </div>
+    </div>
+  </div>
+</div>    
+{{end}}

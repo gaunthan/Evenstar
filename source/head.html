@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="shortcut icon" href="{{$.blogInfo.Logo}}">
+   
+    <!-- title -->
+    <title>
+    {{if $.curIsIndex}}
+        {{$.blogInfo.Title}}
+    {{else if $.curIsCate}}
+        Category-{{$.curCateTitle}}
+    {{else if $.curIsSearch}}
+        Seaching {{if .keywords}} - {{.keywords}} {{end}}
+    {{else if $.curIsTags}}
+        Tags
+    {{else if $.curIsTagPosts}}
+        Tag - {{$.curTag}}
+    {{else if $.curIsPost}}
+    	{{$.post.Title}}
+    {{else if $.curIsSingle}}
+    	{{$.single.Title}}
+    {{else if $.curIsArchive}}
+    	Archives
+    {{end}}
+    </title>    
+    
+    <!-- styles -->
+    
+    <link href="{{$.fontAwesomeUrl}}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{$.themeBaseUrl}}/style.css" />    
+</head>

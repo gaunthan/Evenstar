@@ -1,0 +1,31 @@
+{{template "partial_header.html" $}}
+
+<section id="about">
+    <p>{{$.themeInfo.AboutMe}}</p>
+    <p style="display: inline">
+        {{if $.themeInfo.PersonalLinks}}
+            Find me on
+            <ul id="sociallinks">
+                {{range $.themeInfo.PersonalLinks}}
+                    <li><a class="icon" target="_blank" href="{{.Url}}" title="{{.Title}}"><i class="fa fa-{{.faicon}}"></i></a></li>
+                {{end}}
+            </ul>.
+        {{end}}
+    </p>
+</section>
+
+<section id="writing">
+    <span class="h1"><a href="{{$.archivesUrl}} ">Latest Writing</a></span>
+    <ul class="post-list">
+        {{range $.posts}}
+            <li class="post-item">
+                    <div class="meta">
+                    <time datetime="{{ .PublicTime}}" itemprop="datePublish">{{dateFormat .PublicTime "2006-01-02"}}</time>
+                    </div>
+                    <span><a class="title" href="{{$.postUrl}}/{{.UrlTitle}}" itemprop="url">{{.Title}}</a></span>
+            </li>
+        {{end}}        
+    </ul>
+</section>
+
+{{template "partial_footer.html" $}}

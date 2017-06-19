@@ -1,0 +1,39 @@
+{{if and $.blogInfo.OpenComment (not (eq $.blogInfo.CommentType "disqus"))}}
+    <script>
+    var siteUrl = "{{$.siteUrl}}"; // common.js需要
+    // 以下 share_comment.js需要
+    var blogInfo={UserId: "{{$.blogInfo.UserId}}", OpenComment: {{$.blogInfo.OpenComment}}, CommentType: "{{$.blogInfo.CommentType}}"}; 
+    var noteId = "{{$.post.NoteId}}"; // 
+    var preLikeNum = +"{{$.post.LikeNum}}";
+    var commentNum = +"{{$.post.CommentNum}}";
+    </script>
+    
+    <!-- 共享与评论css -->
+    <link href="{{$.shareCommentCssUrl}}" rel="stylesheet">
+    <!-- 一些公用的js -->
+    <script src="{{$.blogCommonJsUrl}}"></script>
+    <script src="{{$.siteUrl}}/public/blog/js/jsrender.js"></script>
+    <script src="{{$.siteUrl}}/public/blog/js/jquery-cookie-min.js"></script>
+    <script src="{{$.siteUrl}}/public/blog/js/bootstrap-dialog.min.js"></script>
+    <script src="{{$.siteUrl}}/public/blog/js/jquery.qrcode.min.js"></script>
+    <!-- share && comment -->
+    <script src="{{$.shareCommentJsUrl}}"></script>
+    
+    <script type="text/x-jsrender" id="tLikers">
+    [[for users]]
+    	<a id="liker_[[:UserId]]" title="[[:BlogTitle]]" href="[[:BlogUrl]]" target="_blank" class="voter">
+    		[[if Logo]]
+    			<img alt="avatar" class="avatar-small" src="[[:Logo]]">
+    		[[else]]
+    			<img alt="avatar" class="avatar-small" src="/images/blog/default_avatar.png">
+    		[[/if]]
+    	</a>
+    [[/for]]
+    </script>
+    
+    {{template "leanote_comments.html" .}}
+{{end}}
+
+{{if and $.blogInfo.OpenComment (eq $.blogInfo.CommentType "disqus")}}
+    {{template "disqus.html" .}}    
+{{end}}	

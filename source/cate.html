@@ -1,0 +1,13 @@
+{{template "partial_header.html" .}}
+
+<div id="postsContainer">
+	<div class="container">
+		<h2> Category - {{$.curCateTitle}}</h2>
+	</div>
+	<div id="posts">
+		{{template "post_abstract.html" $}}
+		{{template "paging.html" $}}
+	</div>
+</div>
+        
+{{template "partial_footer.html" .}}

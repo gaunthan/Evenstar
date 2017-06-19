@@ -1,0 +1,72 @@
+{{template "partial_header.html" .}}
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 class="posttitle" itemprop="name headline">
+            {{$.post.Title}}
+        </h1>  
+    <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">
+                <a href="{{$.indexUrl}}">{{.blogInfo.Username}}</a>
+            </span>
+        </span>
+        <time datetime="{{$.post.PublicTime}}" itemprop="datePublish"><i class="fa fa-calendar-o"></i>
+            Posted on {{dateFormat $.post.PublicTime "2006-01-02"}}
+        </time>
+        {{if .post.Tags}}
+            <div class="article-tag">
+                <i class="fa fa-tag"></i>
+                {{blogTags $ $.post.Tags}}
+            </div>	
+        {{end}}
+        </div>
+    </header>
+  
+    <div class="desc content" id="content" itemprop="articleBody">
+	    {{if $.post.IsMarkdown }}
+		<div id="markdownContent" style="display: none">
+			<!-- 用textarea装html, 防止得到的值失真 -->
+			<textarea>{{$.post.Content | raw}}</textarea>
+		</div>
+	    {{else}}
+		    {{$.post.Content | raw}}
+	    {{end}}
+    </div>
+
+    {{template "reward.html" $}}
+    
+    <div class="post-nav">
+        <div class="post-nav-next post-nav-item">
+        {{if $.prePost}}
+            <a href="{{$.postUrl}}/{{$.prePost.UrlTitle}}"><i class="fa fa-chevron-left"></i>{{$.prePost.Title}}</a>
+        {{end}}
+        </div>
+        
+        <span class="post-nav-divider"></span>
+        
+        <div class="post-nav-prev post-nav-item">
+        {{if $.nextPost}}
+          <a href="{{$.postUrl}}/{{$.nextPost.UrlTitle}}">{{$.nextPost.Title}}<i class="fa fa-chevron-right"></i></a>
+        {{end}}
+        </div>
+    </div>
+</article>
+
+<script src="{{$.jQueryUrl}}"></script>
+<link href="{{$.themeBaseUrl}}/prettifycode.css" type="text/css" rel="stylesheet"/>
+<script src="{{$.prettifyJsUrl}}"></script>
+
+{{if $.post.IsMarkdown }}
+    <script src="{{$.themeBaseUrl}}/md2html.js" type="text/javascript"></script>
+    <script>
+        var content = $.trim($("#markdownContent textarea").val());
+        md2Html(content, $("#content"), function(html) {
+            $("pre").addClass("prettyprint linenums");
+            prettyPrint();
+        });
+    </script>
+{{end}}
+
+{{template "share_comment.html" $}}
+{{template "partial_footer.html" $}}

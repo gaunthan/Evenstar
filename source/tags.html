@@ -1,0 +1,34 @@
+{{template "partial_header.html" .}}
+
+<div class="tag-cloud-title" style="text-align: center"></div>
+
+<div class="tags" style="display: block; text-align: center">
+    {{range $.tags}}
+        <a href="{{$.tagPostsUrl}}/{{.Tag}}" title="{{.Count}}" style="margin: 8px; display: inline-block">{{.Tag}}</a> 
+    {{end}}
+</div>
+
+<!--Sort the tags by dictionary order-->
+<script type="text/javascript">
+    var tagsHolder = document.querySelector(".tags");
+    var array = Array.from(document.querySelectorAll(".tags a"));
+    
+    array.sort(function compareFunction(param1, param2) {
+        return param1.innerText.localeCompare(param2.innerText);
+    }).map(function(a) {
+        var fontSize = 0.8 + a.title / 20;
+        if (fontSize > 5) {
+            fontSize = 5;
+        }else if (fontSize < 0.5) {
+            fontSize = 0.5;
+        }
+        a.style.fontSize = fontSize  + 'rem';
+        
+        tagsHolder.appendChild(a);
+    });
+    
+    // document.querySelector(".tags").appendChild(ul);
+    document.querySelector(".tag-cloud-title").innerText = array.length + ' ' + 'tags in total';
+</script>
+
+{{template "partial_footer.html" .}}

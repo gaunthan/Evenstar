@@ -1,0 +1,21 @@
+
+<!--Home-->
+<li><a href="{{$.indexUrl}}">Home</a></li>    
+<!--Archives-->
+<li><a href="{{$.archivesUrl}}">Archives</a></li>       
+<!--Tags-->
+<li><a href="{{$.tagsUrl}}">Tags</a></li>   
+
+<!--Singles-->
+{{if $.singles}}
+    {{range $.singles}}
+      <li><a href="{{$.singleUrl}}/{{.UrlTitle}}">{{.Title}}</a></li>
+    {{end}}
+{{end}}
+
+<!--Cates-->
+{{if $.cates}}
+    {{range $.cates}}
+      <li><a href="{{$.cateUrl}}/{{.UrlTitle}}">{{.Title}}</a></li>
+    {{end}}
+{{end}}
