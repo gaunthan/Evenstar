@@ -39,7 +39,7 @@ Firstly, you need to download this repo
 
 For uploading Evenstar to your Leanote, you need to zip the ./source path to a file
 
-    zip Evenstar.zip source/*
+    zip Evenstar.zip source -r
     
 Then you can upload it on your [blog settings center](https://leanote.com/member/blog/theme).
 
