@@ -7,6 +7,9 @@
 .inline-block {
 	display:inline-block;
 }
+.table-holder {
+	overflow:auto;
+}
 .table {
 	display:table;
 }
@@ -1521,3 +1524,4 @@ searchForm:nth-child(3) .suggestionBox::before {
 .searchForm:nth-child(4) .suggestionBox::before {
 	border-bottom:7px solid #859ce6;
 }
+
