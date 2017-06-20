@@ -12,12 +12,21 @@
 * Author 主题的作者
 * AuthorUrl 作者的博客链接或相关链接
 
-您可以自由修改其他内容。
+本项目已经托管在Github上，欢迎访问：https://github.com/gaunthan/Evenstar
+
+您可以自由修改其他内容。使用博客前请私化以下内容
+
+- AboutMe
+- QR code images
+- PersonalLinks
+- ProjectsLink
+
+你可以设置CanGiveMoney以下其他字段，定制是否显示赏赐及提示内容等。
 */
 {
     "Name": "Evenstar",
     "Desc": "A responsive, dark and simple blog theme for Leanote, derived from cactus-dark, with many exciting new features.",
-    "Version": "1.0",
+    "Version": "2.0",
     "Author": "gaunthan",
     "AuthorUrl": "http://gaunthan.leanote.com",
 
