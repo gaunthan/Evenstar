@@ -22,12 +22,17 @@
     "AuthorUrl": "http://gaunthan.leanote.com",
 
     "AboutMe": "Hi. I‘m Gaunthan Huang, a Chinese student from GuangDong University of Technology(also known as GDUT), majoring in computer science and technology.",
+    
+    "ShowProjectMenu": "true",
+    "ProjectsLink": "https://github.com/gaunthan",
+    
     "CanGiveMoney": "true",    
     "UseCustomRewardImage": "false",
     "RewardImageName": "buy-me-a-coffee-min.gif",
     "WantMoneyNotice": "true",
     "MoneyNotice": "想要喂养单身汪吗？",
     "RewardButtonText": "赏",
+    
     "PersonalLinks": [
         {"Title": "Github", "Url": "http://github.com/gaunthan", "faicon": "github-alt"},
         {"Title": "E-Mail", "Url": "mailto:gaunthanhuang@foxmail.com", "faicon": "fa fa-envelope"},
@@ -35,3 +40,4 @@
         {"Title": "Netease Cloud Music", "Url": "http://music.163.com/#/user/home?id=87822300", "faicon": "fa fa-music"}
     ]
 }
+

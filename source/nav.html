@@ -5,6 +5,10 @@
 <li><a href="{{$.archivesUrl}}">Archives</a></li>       
 <!--Tags-->
 <li><a href="{{$.tagsUrl}}">Tags</a></li>   
+<!--Projects-->
+{{if (eq $.themeInfo.ShowProjectMenu "true")}}
+<li><a href="{{$.themeInfo.ProjectsLink}}">Projects</a></li>   
+{{end}}
 
 <!--Singles-->
 {{if $.singles}}
