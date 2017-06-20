@@ -68,5 +68,17 @@
     </script>
 {{end}}
 
+<!--Add new line for blank code, otherwise copying code will lose all blank line.-->
+<script>
+    var codes = $("code");
+    codes.each(function(i) {
+        var code = codes[i];
+        if (code.firstChild == null) {
+            code.append('\n');
+        }
+    });    
+</script>
+
 {{template "share_comment.html" $}}
 {{template "partial_footer.html" $}}
+
