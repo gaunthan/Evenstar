@@ -1,21 +1,25 @@
 {{range $.posts}}
 	<div class="each-post">
-		<div class="title">
-			<a class="h1" style="display: inline" href="{{$.postUrl}}/{{.UrlTitle}}" title="Full text">{{.Title}}</a>
-            <!--<time datetime="{{ .PublicTime}}" itemprop="datePublish">{{dateFormat .PublicTime "2006-01-02"}}</time>-->
+		<div class="header">
+			<h2><a href="{{$.postUrl}}/{{.UrlTitle}}" title="Full text">{{.Title}}</a></h2>
+            <!--Post settings-->
+            <a class="setting" href="https://leanote.com/member/blog/updateBlogAbstract?noteId={{.NoteId}}" target="_blank" title="Edit abstract"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
             {{if .Tags}}
                 <div class="article-tag">
                     <i class="fa fa-tag"></i>
                     {{blogTags $ .Tags}}
-                </div>	
-            {{end}}                
+                </div>
+            {{end}}
 		</div>
 		
 		<div class="desc content">
 			{{.Abstract | raw}}
 		</div>
-		<div id="moreContainer">
-		    <a class="more" href="{{$.postUrl}}/{{.UrlTitle}}" title="Read"></a></div>
+        <div class="moreContainer">
+            <a class="more-btn" href="{{$.postUrl}}/{{.UrlTitle}}">
+              More »
+            </a>
+        </div>
 	</div>
 {{else}}
     <div class="each-post">
