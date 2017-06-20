@@ -1,6 +1,7 @@
 {{template "partial_header.html" .}}
 
 <div id="archive">
+    <span id="archive-title"></span>
     <ul class="post-list">
     {{range $.archives}}
     {{$year := .Year}}
@@ -21,3 +22,11 @@
 </div>
 
 {{template "partial_footer.html" .}}
+
+<script>
+    var items = $('#archive li');
+    var title = 'Great!' + ' ' + items.length + ' ' +  'posts in total. Keep on writing.';
+    console.log(title);
+    console.log(document.getElementById('archive-title'));    
+    document.getElementById('archive-title').innerText = title;
+</script>
