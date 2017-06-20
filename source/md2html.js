@@ -946,7 +946,8 @@ if (typeof exports === "object" && typeof require === "function") {
             }
             footnoteCounter++;
             self.usedFootnotes.push(id);
-            var html = '<a href="#fn:' + id + '" id="fnref:' + id + '" title="See footnote" class="footnote">' + footnoteCounter + "</a>";
+            var html = '<sup>' + '<a href="#fn:' + id + '" id="fnref:' + id + '" title="See footnote" class="footnote">'
+                    + '[' + footnoteCounter + ']' + "</a>" + '</sup>';
             return self.hashExtraInline(html)
         });
         return text

@@ -483,6 +483,9 @@ body {
 	background-size:100% 6px;
 	background-image:linear-gradient(transparent,transparent 6px,#d480aa 6px,#d480aa);
 }
+.content .footnote {
+	background-image: none;
+}
 @media (min-width:540px) {
 	.image-wrap {
 	flex-direction:row;
@@ -1321,7 +1324,7 @@ code {
 pre code {
 	border:none;
 	/* display: inline-block; */
-	/* padding:0; */
+	 padding:0; 
 }
 .highlight {
 	font-family:"Menlo","Meslo LG",monospace;
