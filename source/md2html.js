@@ -893,7 +893,7 @@ if (typeof exports === "object" && typeof require === "function") {
             var headers = header.split(/ *[|] */);
             var colCount = headers.length;
             var cls = self.tableClass ? ' class="' + self.tableClass + '"' : "";
-            var html = ["<table", cls, ">\n", "<thead>\n", "<tr>\n"].join("");
+            var html = ["<div class=\"table-holder\"><table", cls, ">\n", "<thead>\n", "<tr>\n"].join("");
             for (i = 0; i < colCount; i++) {
                 var headerHtml = convertSpans(trim(headers[i]), self);
                 html += ["  <th", align[i], ">", headerHtml, "</th>\n"].join("")
@@ -916,7 +916,7 @@ if (typeof exports === "object" && typeof require === "function") {
                 }
                 html += "</tr>\n"
             }
-            html += "</table>\n";
+            html += "</table></div>\n";
             return self.hashExtraBlock(html)
         }
         return text
