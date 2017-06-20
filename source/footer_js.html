@@ -28,12 +28,10 @@
 <script src="{{$.themeBaseUrl}}/scrollspy.js"></script>
 <script type="text/javascript">
 // The following code is come from hexo theme NexT.
-$(document).ready(function () {
-
+function initTocScroll(tocSelector) {
   initScrollSpy();
 
   function initScrollSpy () {
-    var tocSelector = '#toc';
     var $tocElement = $(tocSelector);
     var activeCurrentSelector = '.active-current';
 
@@ -53,5 +51,11 @@ $(document).ready(function () {
         .removeClass(activeCurrentSelector.substring(1));
     }
   }
+}
+
+$(document).ready(function () {
+    initTocScroll("#toc");
+    initTocScroll("#toc-footer");
 });
 </script>
+
