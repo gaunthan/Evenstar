@@ -17,15 +17,16 @@
 <section id="writing">
     <span class="h1"><a href="{{$.archivesUrl}} ">Latest Writing</a></span>
     <ul class="post-list">
-        {{range $.posts}}
+        {{range $.recentPosts}}
             <li class="post-item">
-                    <div class="meta">
-                    <time datetime="{{ .PublicTime}}" itemprop="datePublish">{{dateFormat .PublicTime "2006-01-02"}}</time>
-                    </div>
-                    <span><a class="title" href="{{$.postUrl}}/{{.UrlTitle}}" itemprop="url">{{.Title}}</a></span>
+                <div class="meta">
+                    <time datetime="{{ .PublicTime}}" itemprop="datePublish">{{dateFormat .PublicTime "Jan 2 2006"}}</time>
+                </div>
+                <span><a class="title" href="{{$.postUrl}}/{{.UrlTitle}}" itemprop="url">{{.Title}}</a></span>
             </li>
         {{end}}        
     </ul>
 </section>
 
+{{template "footer_js.html"  $}}
 {{template "partial_footer.html" $}}
