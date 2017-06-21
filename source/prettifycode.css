@@ -7,8 +7,8 @@ pre.prettyprint  * {
 
 pre.prettyprint {
 /*     注释下面这句使单词不自动换行  */
-/*     white-space: pre-wrap;   */
-    word-wrap: break-word;
+    /*white-space: pre-wrap;*/
+    /*word-wrap: break-word;*/
     padding: 0px;
     background-color: transparent;
     border: none;
