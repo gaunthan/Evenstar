@@ -420,7 +420,7 @@
 #posts .each-post h2 {
 	display: inline;
 	color: #2bbc8a;
-    text-decoration: underline;
+	/* text-decoration: underline; */
 }
 #posts .setting {
 	background-image: none;
@@ -447,6 +447,7 @@
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;	
+    margin-bottom: 0.2rem;
 }
 *,*:before,*:after {
 	box-sizing:border-box;
@@ -798,7 +799,7 @@ body {
 /* footer toc */
 #footer-post #toc ul {
 	list-style-type:disc;
-	padding-left:1.5rem;
+	padding-left: 2rem;
 	display: block;
 }
 #footer-post #toc li {
