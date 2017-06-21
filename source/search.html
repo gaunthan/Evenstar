@@ -1,10 +1,11 @@
 {{template "partial_header.html" $}}
 
-<section id="searching">
-    <ul class="post-list">
+<div id="postsContainer">
+	<div id="posts">
 		{{template "post_abstract.html" $}}
-		{{template "paging.html" $}}    
-    </ul>
-</section>
+		{{template "paging.html" $}}
+	</div>
+</div>
 
+{{template "footer_js.html"  $}}
 {{template "partial_footer.html" $}}
