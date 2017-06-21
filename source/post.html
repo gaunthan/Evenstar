@@ -12,8 +12,10 @@
             </span>
         </span>
         <time datetime="{{$.post.PublicTime}}" itemprop="datePublish"><i class="fa fa-calendar-o"></i>
-            Posted on {{dateFormat $.post.PublicTime "2006-01-02"}}
+            Posted on {{dateFormat $.post.PublicTime "Jan 2 2006"}}
         </time>
+        <!--Note editing-->
+        <a class="setting" href="https://leanote.com/note/{{$.post.NoteId}}" target="_blank" title="Edit note"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
         {{if .post.Tags}}
             <div class="article-tag">
                 <i class="fa fa-tag"></i>
@@ -53,7 +55,7 @@
     </div>
 </article>
 
-<script src="{{$.jQueryUrl}}"></script>
+{{template "footer_js.html"  $}}
 <link href="{{$.themeBaseUrl}}/prettifycode.css" type="text/css" rel="stylesheet"/>
 <script src="{{$.prettifyJsUrl}}"></script>
 
