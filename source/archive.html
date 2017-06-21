@@ -11,7 +11,7 @@
             {{range .Posts}}
                 <li class="post-item">
                     <div class="meta">
-                    <time datetime="{{ .PublicTime}}" itemprop="datePublish">{{dateFormat .PublicTime "2006-01-02"}}</time>
+                    <time datetime="{{ .PublicTime}}" itemprop="datePublish">{{dateFormat .PublicTime  "Jan 2 2006"}}</time>
                     </div>
                     <span><a class="title" href="{{$.postUrl}}/{{.UrlTitle}}" itemprop="url">{{.Title}}</a></span> 
                 </li>
@@ -21,7 +21,7 @@
     </ul>
 </div>
 
-{{template "partial_footer.html" .}}
+{{template "footer_js.html"  $}}
 
 <script>
     var items = $('#archive li');
@@ -30,3 +30,6 @@
     console.log(document.getElementById('archive-title'));    
     document.getElementById('archive-title').innerText = title;
 </script>
+
+{{template "partial_footer.html" $}}
+
