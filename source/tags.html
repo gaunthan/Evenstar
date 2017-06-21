@@ -8,12 +8,14 @@
     {{end}}
 </div>
 
+{{template "footer_js.html" $}}
+
 <!--Sort the tags by dictionary order-->
 <script type="text/javascript">
-    var tagsHolder = document.querySelector(".tags");
-    var array = Array.from(document.querySelectorAll(".tags a"));
+    var tagsHolder = document.querySelector(".content .tags");
+    var tags = Array.from(tagsHolder.querySelectorAll(" a"));
     
-    array.sort(function compareFunction(param1, param2) {
+    tags.sort(function compareFunction(param1, param2) {
         return param1.innerText.localeCompare(param2.innerText);
     }).map(function(a) {
         var fontSize = 0.8 + a.title / 20;
@@ -28,7 +30,7 @@
     });
     
     // document.querySelector(".tags").appendChild(ul);
-    document.querySelector(".tag-cloud-title").innerText = array.length + ' ' + 'tags in total';
+    document.querySelector(".tag-cloud-title").innerText = tags.length + ' ' + 'tags in total';
 </script>
 
-{{template "partial_footer.html" .}}
+{{template "partial_footer.html" $}}
