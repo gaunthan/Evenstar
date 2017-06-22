@@ -22,10 +22,12 @@
 </script>
 
 {{if $.curIsPost}}
+
 <link href="{{$.themeBaseUrl}}/prettifycode.css" type="text/css" rel="stylesheet"/>
 <script src="{{$.prettifyJsUrl}}"></script>
 
 {{if $.post.IsMarkdown }}
+
 <script src="{{$.themeBaseUrl}}/md2html.js" type="text/javascript"></script>
 <script>
     var content = $.trim($("#markdownContent textarea").val());
@@ -34,6 +36,7 @@
         prettyPrint();
     });
 </script>
+
 {{end}}
 
 <!--Add new line for blank code, otherwise copying code will lose all blank line.-->
@@ -86,4 +89,38 @@ $(document).ready(function () {
     initTocScroll("#toc-footer");
 });
 </script>
+
+{{else if $.curIsTags}}
+
+<!--Sort the tags by dictionary order, and make a tag clouds-->
+<script type="text/javascript">
+    var tagsHolder = document.querySelector(".content .tags");
+    var tags = Array.from(tagsHolder.querySelectorAll(" a"));
+    
+    tags.sort(function compareFunction(param1, param2) {
+        return param1.innerText.localeCompare(param2.innerText);
+    }).map(function(a) {
+        var fontSize = 0.8 + a.title / 20;
+        if (fontSize > 5) {
+            fontSize = 5;
+        }else if (fontSize < 0.5) {
+            fontSize = 0.5;
+        }
+        a.style.fontSize = fontSize  + 'rem';
+        tagsHolder.appendChild(a);
+    });
+    // document.querySelector(".tags").appendChild(ul);
+    document.querySelector(".tag-cloud-title").innerText = tags.length + ' ' + 'tags in total';
+</script>
+
+{{else if $.curIsArchive}}
+
+<script>
+    var items = $('#archive li');
+    var title = 'Great!' + ' ' + items.length + ' ' +  'posts in total. Keep on writing.';
+    console.log(title);
+    console.log(document.getElementById('archive-title'));
+    document.getElementById('archive-title').innerText = title;
+</script>
+
 {{end}}

@@ -8,29 +8,4 @@
     {{end}}
 </div>
 
-{{template "footer_js.html" $}}
-
-<!--Sort the tags by dictionary order-->
-<script type="text/javascript">
-    var tagsHolder = document.querySelector(".content .tags");
-    var tags = Array.from(tagsHolder.querySelectorAll(" a"));
-    
-    tags.sort(function compareFunction(param1, param2) {
-        return param1.innerText.localeCompare(param2.innerText);
-    }).map(function(a) {
-        var fontSize = 0.8 + a.title / 20;
-        if (fontSize > 5) {
-            fontSize = 5;
-        }else if (fontSize < 0.5) {
-            fontSize = 0.5;
-        }
-        a.style.fontSize = fontSize  + 'rem';
-        
-        tagsHolder.appendChild(a);
-    });
-    
-    // document.querySelector(".tags").appendChild(ul);
-    document.querySelector(".tag-cloud-title").innerText = tags.length + ' ' + 'tags in total';
-</script>
-
 {{template "partial_footer.html" $}}

@@ -21,15 +21,5 @@
     </ul>
 </div>
 
-{{template "footer_js.html"  $}}
-
-<script>
-    var items = $('#archive li');
-    var title = 'Great!' + ' ' + items.length + ' ' +  'posts in total. Keep on writing.';
-    console.log(title);
-    console.log(document.getElementById('archive-title'));    
-    document.getElementById('archive-title').innerText = title;
-</script>
-
 {{template "partial_footer.html" $}}
 
