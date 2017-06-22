@@ -55,32 +55,6 @@
     </div>
 </article>
 
-{{template "footer_js.html"  $}}
-<link href="{{$.themeBaseUrl}}/prettifycode.css" type="text/css" rel="stylesheet"/>
-<script src="{{$.prettifyJsUrl}}"></script>
-
-{{if $.post.IsMarkdown }}
-    <script src="{{$.themeBaseUrl}}/md2html.js" type="text/javascript"></script>
-    <script>
-        var content = $.trim($("#markdownContent textarea").val());
-        md2Html(content, $("#content"), function(html) {
-            $("pre").addClass("prettyprint linenums");
-            prettyPrint();
-        });
-    </script>
-{{end}}
-
-<!--Add new line for blank code, otherwise copying code will lose all blank line.-->
-<script>
-    var codes = $("code");
-    codes.each(function(i) {
-        var code = codes[i];
-        if (code.firstChild == null) {
-            code.append('\n');
-        }
-    });    
-</script>
-
 {{template "share_comment.html" $}}
 {{template "partial_footer.html" $}}
 
