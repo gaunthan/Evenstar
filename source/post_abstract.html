@@ -2,8 +2,8 @@
 	<div class="each-post">
 		<div class="header">
 			<h2><a href="{{$.postUrl}}/{{.UrlTitle}}" title="Full text">{{.Title}}</a></h2>
-            <!--Post settings-->
-            <a class="setting" href="https://leanote.com/member/blog/updateBlogAbstract?noteId={{.NoteId}}" target="_blank" title="Edit abstract"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+            <!--Edit abstract-->
+            <a class="icon" href="https://leanote.com/member/blog/updateBlogAbstract?noteId={{.NoteId}}" target="_blank" title="Edit abstract"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
             {{if .Tags}}
                 <div class="article-tag">
                     <i class="fa fa-tag"></i>
@@ -26,3 +26,4 @@
     No more result.
     </div>
 {{end}}
+
