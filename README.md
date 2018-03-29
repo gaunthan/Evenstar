@@ -15,7 +15,7 @@ Evenstar is a responsive, dark and simple blog theme for [Leanote](https://leano
 - Dark, simple 404 page. 
 - ...
 
-## More screenshots
+## Screenshots
 ### Tag cloud
 ![](images/screenshot-tags.png)
 
