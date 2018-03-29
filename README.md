@@ -3,8 +3,6 @@ Evenstar is a responsive, dark and simple blog theme for [Leanote](https://leano
 
 [Demo](http://gaunthan.leanote.com).
 
-![](images/screenshot-home.png)
-
 ## Main changes
 
 - Porting to Leanote, using [Leanote blog API](https://github.com/leanote/leanote/wiki/leanote-blog-theme-api) to generate content.
