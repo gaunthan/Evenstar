@@ -1,7 +1,7 @@
 # Evenstar
 Evenstar is a responsive, dark and simple blog theme for [Leanote](https://leanote.com), derived from [cactus-dark](https://github.com/probberechts/cactus-dark), with many exciting new features.
 
-[Demo](http://gaunthan.leanote.com). View [cactus-dark](https://probberechts.github.io/cactus-dark/).
+[Demo](http://gaunthan.leanote.com).
 
 ![](images/screenshot-home.png)
 
